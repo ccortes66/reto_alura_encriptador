@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto - encriptado</title>
+    <!--- fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@1,200&display=swap" rel="stylesheet">
+    <!-- mis estilos -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+<h1 class="color_encabezado">
+    Encriptar de texto
+</h1>
+    
+
+<main>
+   
+    <form action="#" class="col_items separador">
+        <label for="campoEncriptador">Escriba el texto a encriptar</label>
+        <input type="text" name="encriptador" id="campoEncriptador" required placeholder="digite la palabra">
+        <input type="submit" value="Enctiptar" class="botones" id="obtenerResultado">
+    </form>
+    <h2> 
+        Texto encriptado: 
+    </h2>
+    <p id="mostarResultado"></p>
+
+    <p id="numeroACII"></p>
+
+    <div class="separador">
+        <h2>
+            Información
+        </h2>
+        <p id="info"></p>
+    </div>
+
+</main>     
+
+
+ <!--Script-->  
+ <script src="./js/encriptador.js"></script> 
+</body>
+</html>
