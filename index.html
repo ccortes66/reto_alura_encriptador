@@ -27,18 +27,31 @@
         <input type="text" name="encriptador" id="campoEncriptador" required placeholder="digite la palabra">
         <input type="submit" value="Enctiptar" class="botones" id="obtenerResultado">
     </form>
-    <h2> 
-        Texto encriptado: 
-    </h2>
+    <h2 id="textoResultado"></h2>
     <p id="mostarResultado"></p>
-
     <p id="numeroACII"></p>
-
     <div class="separador">
         <h2>
             Información
         </h2>
-        <p id="info"></p>
+        <br>
+        <p>Encriptador de textos Alura</p>
+        <br>
+        <p>Desarrollado utilizando:</p>
+        <br>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <br>
+        <p>
+          Se desarrolla utilizando los métodos nativos de JavaScript para obtener el número de la letra con 
+          valor.charCodeAt(valor) + desfase, cambiar el valor y volver a obtener el valor usando String.fromCharCode()
+          Para obtener el resultado de valor ASCII desfasado a letra, se usa el método String.fromCharCode(valor) que toma como argumento un número que representa 
+          el código ASCII y devuelve la letra correspondiente. Luego, se imprime el resultado alterando el contenido de la etiqueta HTML que tiene asignado un identificador 
+          único utilizando el método document.querySelector(id).innerHTML = resultado en pantalla
+        </p>
     </div>
 
 </main>     

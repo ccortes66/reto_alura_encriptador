@@ -1,72 +1,96 @@
 
-/* Obtener id de cada elemento */
+/* DOM */
 let myEventoBoton = document.querySelector("#obtenerResultado")
 let mostrarResultado = document.querySelector("#mostarResultado")
 let myData = document.querySelector("#campoEncriptador")
 let aciiDesfase = document.querySelector("#numeroACII")
-let infoApp = document.querySelector("#info")
+let infoApp = document.querySelector("#textoResultado")
+
+/* variables */
+let desfase = 0
+let desencriptar = []
+let resultado = []
 
 //estilos de cada elementos con js
 let estilosCss = mostrarResultado.style
 
+//constante 
+const maximo = 128
+const minimo = 30
+
+
 //Crear un número randon a cada desfase código ASCII
 function setRandom(){
-    return Math.floor(Math.random() * 255)
+   
+    return Math.floor((Math.random()  * (maximo - minimo ) + minimo)) 
 }
 
-function encriptadorPalabras(event){
+function encriptadorTexto(event){
     //detiene el evento del fromulario
     event.preventDefault()
-    let resultado = []
     let data = myData.value
-    const desfase = setRandom()
-    
+    desfase = setRandom()
+
     if(data.trim() != 0){
-        for(let valor of data.trim()){
-            console.log(valor) 
-            resultado.push(String.fromCharCode((valor.charCodeAt(valor) + desfase)))
-         }
-         estilosCss.color = "black"
-         mostrarResultado.innerHTML = resultado.join('')
-         aciiDesfase.innerHTML = "numero acii para desfase ="+ desfase
+        arrayCharts =  data.split("")
+        
+        for(let valor of arrayCharts){
+            resultado.push(String.fromCharCode(( valor.charCodeAt(0) + desfase)))
+        }
+
+        estilosCss.color = "black"
+        mostrarResultado.innerHTML = resultado.join('')
+        infoApp.innerHTML = "Texto encriptado:"
+        aciiDesfase.innerHTML = "numero acii para desfase ="+ desfase
+        myEventoBoton.value = "Desencriptar"
+        myData.style.display = "none"
+        estilosCss.fontSize = "1.5em"
+        myData.value = " "
+
     }else{
-     
+        
         estilosCss.color = "red"
         estilosCss.fontSize = "1.8em"
-
         mostrarResultado.innerHTML = "el campo esta vacio"  
         aciiDesfase.innerHTML = "error"
     }
 
-    
-    
-     
 }
 
-infoApp.style.fontSize = "1.5em"
 
-infoApp.innerHTML = `
+function desencriptarTexto(event){
+    event.preventDefault()
+    for(let valor of resultado){
+        desencriptar.push(String.fromCharCode((valor.charCodeAt(valor) - desfase)))
+    }
+    estilosCss.color = "black"
+    mostrarResultado.innerHTML = desencriptar.join('')
+    myEventoBoton.value = "Enctiptar"
+    myData.style.display = "block"
+    infoApp.innerHTML = "Texto desencriptado:"
 
-Encriptador de textos Alura <br>
+    resultado.length = 0
+    desencriptar.length = 0
 
-Desarrollado utilizando:<br>
-
-    *HTML<br>
-    *CSS<br>
-    *JavaScript<br>
-
-Explicación:<br>
-Se desarrolla utilizando los métodos nativos de JavaScript para obtener el número de la letra con 
-valor.charCodeAt(valor) + desfase, cambiar el valor y volver a obtener el valor usando String.fromCharCode()
-Para obtener el resultado de valor ASCII desfasado a letra, se usa el método String.fromCharCode(valor) que toma como argumento un número que representa 
-el código ASCII y devuelve la letra correspondiente. Luego, se imprime el resultado alterando el contenido de la etiqueta HTML que tiene asignado un identificador 
-único utilizando el método document.querySelector(id).innerHTML = resultado en pantalla
-
-.
+}
 
 
-`
+function main(event){
+
+    if(myEventoBoton.value === "Enctiptar"){
+        encriptadorTexto(event)
+    }else{
+        desencriptarTexto(event)
+    }
+
+}
+
+
 
 /* se activa con 2 eventos enter y click al boton*/
-myEventoBoton.onclick = encriptadorPalabras
-myEventoBoton.keyup = encriptadorPalabras
+myEventoBoton.onclick = main
+myEventoBoton.keyup = main
+
+    
+
+
