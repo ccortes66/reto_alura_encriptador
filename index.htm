@@ -12,31 +12,38 @@
     <!-- mis estilos -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- pyscript -->
-    <!--- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
 </head>
 <body>
+    <!-- py init -->
+    <py-config src="./python/main.toml">
+    </py-config>
+    <py-script src="./python/main.py">
+    </py-script>
     <header>
         <h1 class="color_encabezado">
             reto alura encriptador
         </h1>
     </header>
     <main>
-      <textarea name="text_enc" id="text_enc" cols="30" rows="25">
+      <div class="content">
+        <textarea name="text_enc" id="text_enc" class="box_content">
+        </textarea>
+        <button type="button" id="enc" py-click="encode()" class="btn_enc">encode</button>  
+      </div>
+      
+      <div class="content">
+        <textarea name="text_decode" id="text_decode" class="box_content">  
+        </textarea>
+        <button type="button" id="dec" py-click="decode()" class="btn_dec">decode</button>
+      </div>   
 
-      </textarea>
-      <textarea name="text_decode" id="text_decode" cols="30" rows="10">
-        
-      </textarea>
-      <py-script src="./python/re.py">
-        
-      </py-script>
-      <py-terminal></py-terminal>
     </main>
     <footer>
-        <button type="button" id="enc" py-click="encode()">encode</button>
-        <button type="button" id="dec" py-click="decode()">decode</button>
+        
+        
     </footer>     
 </body>
 </html>

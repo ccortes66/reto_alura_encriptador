@@ -7,6 +7,7 @@
 body{
     display: flex;
     flex-flow: column nowrap;
+    margin: 0 auto;
 }
 header{
     width: 100%;
@@ -15,32 +16,37 @@ header{
     background-color: rgba(9,48,98,255);
     color: white;
     padding: 1.5em;
+    margin-bottom: 3%;
 }
 main{
     display: flex;
     justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 3%;
-}
-
-
-textarea:nth-child(1){
-    margin-right:  10%;
-}
-
-footer{
-    display: flex;
-    justify-content: center;
-}
-
-button{
-    padding: 1.2em;
-    width: 20%;
+    padding: 3% 0;
     
 }
 
-button:nth-child(1){
-    margin-right: 10%;
+.content{
+    display: flex;
+    flex-flow: column nowrap;  
+    margin: 0 70px;
+}
+
+.box_content{
+    text-align: left;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 5%;
+    padding: 5px;
+    
+}
+
+
+button{
+    padding: 1em 0;
+    width: 100%; 
+}
+
+.btn_enc{
     border: 1px solid rgba(9,48,98,255);
     border-radius: 5px;
     background-color: white ;
@@ -48,23 +54,25 @@ button:nth-child(1){
     transition: 1s all;
 }
 
-button:nth-child(2){
-
-    border-radius: 5px;
+.btn_enc:hover{
+    transform: scale(1.05);
     background-color: rgba(9,48,98,255);
+    color: white;
+}
+
+.btn_dec{
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color:rgba(9,48,98,255);
     color: white;
     transition: 1s all;
 }
 
-button:nth-child(1):hover{
-    transform: scale(1.2);
-    background-color: rgba(9,48,98,255);
-    color: white;
-}
-
-button:nth-child(2):hover{
-    transform: scale(1.2);
+.btn_dec:hover{
     border: 1px solid rgba(9,48,98,255);
-    background-color: white;
+    transform: scale(1.05);
+    background-color: white ;
     color: rgba(9,48,98,255);
 }
+
+
