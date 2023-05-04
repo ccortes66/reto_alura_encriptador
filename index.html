@@ -11,53 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@1,200&display=swap" rel="stylesheet">
     <!-- mis estilos -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- pyscript -->
+    <!--- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
 </head>
 <body>
+    <header>
+        <h1 class="color_encabezado">
+            reto alura encriptador
+        </h1>
+    </header>
+    <main>
+      <textarea name="text_enc" id="text_enc" cols="30" rows="25">
 
-<h1 class="color_encabezado">
-    Encriptar de texto
-</h1>
-    
-
-<main>
-   
-    <form action="#" class="col_items separador">
-        <label for="campoEncriptador">Escriba el texto a encriptar</label>
-        <input type="text" name="encriptador" id="campoEncriptador" required placeholder="digite la palabra">
-        <input type="submit" value="Enctiptar" class="botones" id="obtenerResultado">
-    </form>
-    <h2 id="textoResultado"></h2>
-    <p id="mostarResultado"></p>
-    <p id="numeroACII"></p>
-    <div class="separador">
-        <h2>
-            Información
-        </h2>
-        <br>
-        <p>Encriptador de textos Alura</p>
-        <br>
-        <p>Desarrollado utilizando:</p>
-        <br>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-        <br>
-        <p>
-          Se desarrolla utilizando los métodos nativos de JavaScript para obtener el número de la letra con 
-          valor.charCodeAt(valor) + desfase, cambiar el valor y volver a obtener el valor usando String.fromCharCode()
-          Para obtener el resultado de valor ASCII desfasado a letra, se usa el método String.fromCharCode(valor) que toma como argumento un número que representa 
-          el código ASCII y devuelve la letra correspondiente. Luego, se imprime el resultado alterando el contenido de la etiqueta HTML que tiene asignado un identificador 
-          único utilizando el método document.querySelector(id).innerHTML = resultado en pantalla
-        </p>
-    </div>
-
-</main>     
-
-
- <!--Script-->  
- <script src="./js/encriptador.js"></script> 
+      </textarea>
+      <textarea name="text_decode" id="text_decode" cols="30" rows="10">
+        
+      </textarea>
+      <py-script src="./python/re.py">
+        
+      </py-script>
+      <py-terminal></py-terminal>
+    </main>
+    <footer>
+        <button type="button" id="enc" py-click="encode()">encode</button>
+        <button type="button" id="dec" py-click="decode()">decode</button>
+    </footer>     
 </body>
 </html>
