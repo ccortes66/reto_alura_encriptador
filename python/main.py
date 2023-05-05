@@ -45,8 +45,11 @@ def decode(*args, **kwargs):
      
      
 def copy(*args, **kwargs):
-    navigator.clipboard.writeText(text_decode_element.value)
-    alert('texto copiado')
+    if len(text_decode_element.value.strip()) != 0: 
+        navigator.clipboard.writeText(text_decode_element.value)
+        alert('texto copiado')
+    else:
+        alert('campo vacio')
 
    
 
