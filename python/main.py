@@ -1,11 +1,13 @@
 
 from pyscript import Element
 import pyperclip3
+from js import navigator, alert
 
 
 #dom
 text_enc_element = Element("text_enc")
 text_decode_element = Element("text_decode")
+button_dec = Element("dec")
 
 #variables
 matriz_codigo:dict = {
@@ -43,9 +45,9 @@ def decode(*args, **kwargs):
      
      
 def copy(*args, **kwargs):
-    pyperclip3.copy("holaaaa")
-    a2 = pyperclip3.paste()
-    print(a2)
+    navigator.clipboard.writeText(text_decode_element.value)
+    alert('texto copiado')
+
    
 
 
