@@ -22,7 +22,7 @@ enc:list = []
 def encode(*args, **kwargs):
    enc_value:str = text_enc_element.value
    char_text = list(enc_value.strip())
-   if len(dec) == 0:
+   if len(enc) == 0:
        for letter in char_text:
             if matriz_codigo.get(letter):
                  enc.append(matriz_codigo.get(letter))
