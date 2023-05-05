@@ -20,6 +20,7 @@ enc:list = []
 
 
 def encode(*args, **kwargs):
+   enc.clear()
    enc_value:str = text_enc_element.value
    char_text = list(enc_value.strip())
    for letter in char_text:
