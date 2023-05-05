@@ -22,12 +22,13 @@ enc:list = []
 def encode(*args, **kwargs):
    enc_value:str = text_enc_element.value
    char_text = list(enc_value.strip())
-   for letter in char_text:
-       if matriz_codigo.get(letter):
-          enc.append(matriz_codigo.get(letter))
-       enc.append(letter) 
-   else:
-       text_decode_element.write(''.join(enc))
+   if len(enc) == 0:
+      for letter in char_text:
+          if matriz_codigo.get(letter):
+              enc.append(matriz_codigo.get(letter))
+          enc.append(letter) 
+      else:
+         text_decode_element.write(''.join(enc))
    
 
 def decode(*args, **kwargs):
