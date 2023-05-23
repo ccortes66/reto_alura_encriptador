@@ -1,6 +1,4 @@
-
 from pyscript import Element
-import pyperclip3
 from js import navigator, alert
 
 
